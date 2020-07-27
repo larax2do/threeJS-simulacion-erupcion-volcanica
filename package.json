@@ -1,0 +1,11 @@
+{
+  "name": "treejs-simulacion-erupcion-volcanica",
+  "version": "1.0.0",
+  "description": "Simulacion de una erupcion volcanica usando PSO Y THREEJS",
+  "main": "index.js",
+  "author": "Thales <furion2298@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.118.3"
+  }
+}
