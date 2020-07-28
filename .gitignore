@@ -185,3 +185,7 @@ package-lock.json
 # linters
 .eslintrc.json
 .sass-lint.yml
+
+# webpack bundles
+dist/
+build/

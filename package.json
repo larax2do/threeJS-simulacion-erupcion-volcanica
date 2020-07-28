@@ -3,9 +3,31 @@
   "version": "1.0.0",
   "description": "Simulacion de una erupcion volcanica usando PSO Y THREEJS",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --progress --mode development",
+    "dev": "webpack-dev-server --config webpack.config.js --mode development --open"
+  },
+  "repository": "https://github.com/larax2do/threejs-simulacion-erupcion-volcanica",
   "author": "Thales <furion2298@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "detector-js": "^1.2.0",
+    "geotiff": "^1.0.0-beta.13",
     "three": "^0.118.3"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.0.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "image-webpack-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^9.0.2",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-glsl-loader": "^1.0.1"
   }
 }
