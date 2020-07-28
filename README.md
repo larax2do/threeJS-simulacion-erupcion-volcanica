@@ -5,8 +5,8 @@
 ### Instalacion 
 
 ```
-git clone git@github.com:zhunor/threejs-geotiff-visualizer.git
-cd threejs-geotiff-visualizer
+git clone https://github.com/larax2do/threejs-simulacion-erupcion-volcanica.git
+
 
 yarn install
 ```
