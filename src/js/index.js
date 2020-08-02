@@ -3,12 +3,12 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as Detector from "../js/vendor/Detector";
 
 //pruebas
-import  terrain from "../textures/agri-small-dem.tif";
-import  mountainImage from "../textures/agri-small-autumn.jpg";
+//import  terrain from "../textures/agri-small-dem.tif";
+//import  mountainImage from "../textures/agri-small-autumn.jpg";
 
 //Misti
-//import  terrain from "../textures/DEMrecortado.tif";
-//import  mountainImage from "../textures/MAPArecortado.jpg";
+import  terrain from "../textures/mistiDEM.tif";
+import  mountainImage from "../textures/mistiMAPA.jpg";
 
 import * as GeoTIFF from "geotiff";
 
