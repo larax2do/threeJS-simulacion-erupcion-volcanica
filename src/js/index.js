@@ -40,11 +40,13 @@ class Application {
 
   init() {
     this.scene = new THREE.Scene();
+    this.raycaster = new THREE.Raycaster();
     this.setupRenderer();
     this.setupCamera();
     this.setupControls();
     this.setupLight();
     this.setupTerrainModel();
+    this.setupEsfera();
     this.setupHelpers();
 
     window.addEventListener("resize", () => {
@@ -58,6 +60,7 @@ class Application {
 
   render() {
     this.controls.update();
+    //this.sphere.position.z += 0.01;
     this.renderer.render(this.scene, this.camera);
     // when render is invoked via requestAnimationFrame(this.render) there is
     // no 'this', so either we bind it explicitly or use an es6 arrow function.
@@ -144,11 +147,24 @@ class Application {
         map: texture
       });
 
-      const mountain = new THREE.Mesh(geometry, material);
-      mountain.position.y = 0;
-      mountain.rotation.x = Math.PI / 2;
+      this.mountain = new THREE.Mesh(geometry, material);
+      this.mountain.position.y = -100;
+      this.mountain.rotation.x = Math.PI / 2;
 
-      this.scene.add(mountain);
+      this.scene.add(this.mountain);
+      this.mountain.updateMatrixWorld(true)
+
+      var sphere_geometry = new THREE.SphereGeometry(0.7, 32, 32);
+    var sphere_material = new THREE.MeshPhongMaterial({color: new THREE.Color(0.9, 0.55, 0.8)});
+    this.sphere = new THREE.Mesh(sphere_geometry, sphere_material);
+    this.sphere.position.y=10;
+    this.scene.add(this.sphere);
+
+    var raycaster = new THREE.Raycaster();
+    this.raycaster.set(this.sphere.position, new THREE.Vector3(0, 1, 0));
+
+    var intersects = this.raycaster.intersectObject(this.mountain);
+    this.sphere.position.y = intersects[0].point.y + 0.7;//radius of sphere
 
       const loader = document.getElementById("loader");
       loader.style.opacity = "-1";
@@ -163,6 +179,12 @@ class Application {
     };
 
     readGeoTif();
+  }
+
+  setupEsfera()
+  {
+    
+
   }
 
   setupHelpers() {
